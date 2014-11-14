@@ -5,6 +5,9 @@ set :build_dir, build_dir
 # build target configuration
 activate :target
 
+# add bower path to sprockets
+activate :bower
+
 # group all assets under single dir and allow that to be passed in via env var.
 # (not sure of use case for env var yet, but it seems interesting.)
 assets_dir = ENV['MIDDLEMAN_ASSETS_DIR'] || "assets"
