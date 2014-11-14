@@ -30,3 +30,11 @@ gem "puma"
 # foreman manges the running of the app on heroku via the Procfile
 # http://ddollar.github.io/foreman/
 gem "foreman"
+
+# Breakpoint css for simplified media queries
+# http://breakpoint-sass.com
+gem "breakpoint"
+
+# Susy Sass
+# http://susy.oddbird.net
+gem "susy"
