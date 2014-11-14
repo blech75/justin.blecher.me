@@ -31,6 +31,10 @@ gem "puma"
 # http://ddollar.github.io/foreman/
 gem "foreman"
 
+# better than HAML
+# http://slim-lang.com
+gem 'slim'
+
 # Breakpoint css for simplified media queries
 # http://breakpoint-sass.com
 gem "breakpoint"
