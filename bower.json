@@ -1,0 +1,19 @@
+{
+  "name": "worksperfectly.net",
+  "version": "0.0.1",
+  "authors": [
+    "justin blecher <justin@worksperfectly.net>"
+  ],
+  "license": "MIT",
+  "homepage": "http://worksperfectly.net/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
