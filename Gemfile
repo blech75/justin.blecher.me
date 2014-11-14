@@ -42,3 +42,7 @@ gem "breakpoint"
 # Susy Sass
 # http://susy.oddbird.net
 gem "susy"
+
+# normalize SASS port
+# https://github.com/JohnAlbin/normalize-scss
+gem "normalize-scss"
