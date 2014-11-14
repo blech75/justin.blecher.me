@@ -15,6 +15,10 @@ gem "pre-commit"
 # http://middlemanapp.com
 gem "middleman", "~> 3.3"
 
+# helpful for debugging middleman
+# https://github.com/AndrewKvalheim/middleman-pry
+gem "middleman-pry", group: :development
+
 # provide build targets for different environments
 # https://github.com/xunker/middleman-target
 gem "middleman-target"
