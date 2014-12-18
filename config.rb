@@ -36,6 +36,17 @@ after_configuration do
 end
 
 
+# explcitly import assets here that are to be directly referenced from the HTML
+# FIXME: i'd love for these to be under a 'vendor' folder
+[
+  'jquery/dist/jquery',
+  'modernizr/modernizr',
+  'holderjs/holder'
+].each do |path|
+  sprockets.import_asset(path)
+end
+
+
 # from default middleman config (minus the asset dir stuff, already set above)
 # https://github.com/middleman/middleman/blob/v3-stable/middleman-core/lib/middleman-core/templates/shared/config.tt
 # ----
