@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "modernizr": "~2.8.3",
-    "typeplate-starter-kit": "~2.0.0"
+    "holderjs": "~2.4.1",
+    "jquery": "~2.1.1"
   }
 }
