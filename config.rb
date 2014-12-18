@@ -8,6 +8,14 @@ activate :target
 # Indent html for pretty debugging and do not sort attributes
 set :slim, pretty: true
 
+# use redcarpet in place of kramdown for markdown parsing
+set :markdown_engine, :redcarpet
+
+# some nice redcarpet options
+# see https://github.com/vmg/redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
+
+
 # group all assets under single dir and allow that to be passed in via env var.
 # (not sure of use case for env var yet, but it seems interesting.)
 assets_dir = ENV['MIDDLEMAN_ASSETS_DIR'] || "assets"

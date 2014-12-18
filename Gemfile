@@ -23,6 +23,9 @@ gem "middleman-pry", group: :development
 # https://github.com/xunker/middleman-target
 gem "middleman-target"
 
+# redcarpet is nicer than kramdown
+# https://github.com/vmg/redcarpet
+gem "redcarpet"
 
 # better than HAML
 # http://slim-lang.com
