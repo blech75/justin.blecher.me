@@ -43,6 +43,10 @@ gem "susy"
 # https://github.com/JohnAlbin/normalize-scss
 gem "normalize-scss"
 
+# for providing nice type sizes
+# https://github.com/at-import/modular-scale
+gem "modular-scale"
+
 
 ### DEPLOYMENT
 

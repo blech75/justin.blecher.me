@@ -87,6 +87,8 @@ GEM
     middleman-target (0.0.6)
       middleman (>= 3.0)
     minitest (5.4.2)
+    modular-scale (2.0.5)
+      compass (>= 0.12.0)
     multi_json (1.10.1)
     normalize-scss (3.0.2)
       compass-core (~> 1.0, >= 1.0.0)
@@ -154,6 +156,7 @@ DEPENDENCIES
   middleman (~> 3.3)
   middleman-pry
   middleman-target
+  modular-scale
   normalize-scss
   pre-commit
   puma
