@@ -5,9 +5,6 @@ set :build_dir, build_dir
 # build target configuration
 activate :target
 
-# add bower path to sprockets
-activate :bower
-
 # Indent html for pretty debugging and do not sort attributes
 set :slim, pretty: true
 
@@ -17,6 +14,17 @@ assets_dir = ENV['MIDDLEMAN_ASSETS_DIR'] || "assets"
 set :css_dir,    "#{assets_dir}/css"
 set :js_dir,     "#{assets_dir}/js"
 set :images_dir, "#{assets_dir}/img"
+
+
+
+# use .bowerrc to define location for bower assets and tell sprockets about it
+# from middleman-bower-template: https://github.com/headcanon/middleman-bower-template/blob/master/config.rb#L47
+#
+# Add bower's directory to sprockets asset path
+after_configuration do
+  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
+  sprockets.append_path File.join "#{root}", @bower_config["directory"]
+end
 
 
 # from default middleman config (minus the asset dir stuff, already set above)

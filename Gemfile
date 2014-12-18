@@ -23,10 +23,6 @@ gem "middleman-pry", group: :development
 # https://github.com/xunker/middleman-target
 gem "middleman-target"
 
-# make middleman bower-aware
-# https://github.com/polleverywhere/middleman_bower
-gem "middleman-bower"
-
 # for running the app on heroku
 # https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
 gem "puma"
