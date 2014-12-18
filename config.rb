@@ -14,6 +14,7 @@ assets_dir = ENV['MIDDLEMAN_ASSETS_DIR'] || "assets"
 set :css_dir,    "#{assets_dir}/css"
 set :js_dir,     "#{assets_dir}/js"
 set :images_dir, "#{assets_dir}/img"
+set :fonts_dir,  "#{assets_dir}/fonts"
 
 
 
