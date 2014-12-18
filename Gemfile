@@ -23,13 +23,6 @@ gem "middleman-pry", group: :development
 # https://github.com/xunker/middleman-target
 gem "middleman-target"
 
-# for running the app on heroku
-# https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
-gem "puma"
-
-# foreman manges the running of the app on heroku via the Procfile
-# http://ddollar.github.io/foreman/
-gem "foreman"
 
 # better than HAML
 # http://slim-lang.com
@@ -46,3 +39,14 @@ gem "susy"
 # normalize SASS port
 # https://github.com/JohnAlbin/normalize-scss
 gem "normalize-scss"
+
+
+### DEPLOYMENT
+
+# for running the app on heroku
+# https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
+gem "puma"
+
+# foreman manges the running of the app on heroku via the Procfile
+# http://ddollar.github.io/foreman/
+gem "foreman"
