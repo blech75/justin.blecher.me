@@ -1,0 +1,77 @@
+@import "config";
+
+body.resume {
+  @include breakpoint(40rem) {
+    font-size: 1em;
+  };
+}
+
+// hide my notes
+section li ul {
+  display: none;
+}
+
+@mixin separator-padding() {
+  padding-left: .25em;
+  padding-right: .25em;
+}
+
+@mixin inline-list( $separator : " · " ) {
+  li {
+    display: inline;
+
+    &:after {
+      content: $separator;
+      @include separator-padding();
+    }
+
+    &:last-child:after {
+      content: none;
+    }
+  }
+}
+
+section#values ul,
+section#personal-interests ul,
+section#dont-get-me-started ul {
+  padding-left: 0;
+
+  @include inline-list();
+}
+
+
+span.middot {
+  @include separator-padding();
+}
+
+.commentary {
+  font-style: italic;
+}
+
+
+div.tabs {
+  @include container();
+
+  section#highlights {
+    @include span(45% no-gutter);
+  }
+
+  section#technical-specialites {
+    @include span(45% no-gutter last);
+  }
+
+}
+
+
+section#experience {
+  @include container();
+
+  div.present {
+    @include span(45% no-gutter);
+  }
+
+  div.past {
+    @include span(45% no-gutter last);
+  }
+
+}
