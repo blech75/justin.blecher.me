@@ -6,3 +6,113 @@
 
 // now we can set up our base styles
 // FIXME: this should be broken up into smaller, more targeted files
+
+
+// define base (body text) fonts on the body
+body {
+  font-family: "ff-more-web-pro", georgia, "times new roman", serif;
+  font-style: normal;
+  font-weight: 400;
+
+  font-size: 1em;
+  @include breakpoint(40rem) {
+    font-size: 1.4em;
+  };
+  line-height: 1.75;
+
+  // our layout will likely always needs some left-right padding
+  padding: 0 1em;
+}
+
+// set up header typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: "brandon-grotesque", sans-serif;
+  text-transform: capitalize;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: ms(3);
+  font-style: normal;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 0.25em;
+}
+
+h2 {
+  font-size: ms(2);
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 2em;
+  margin-bottom: 0.25em;
+}
+
+h3 {
+  font-size: ms(1);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: ms(0);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+h5 {
+  font-size: ms(0);
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+h6 {
+  font-size: ms(0);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+
+p, ul, ol, figure {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+li {
+//  margin-bottom: 1.2em;
+}
+
+small {
+}
+
+figure {
+  margin: 2rem auto;
+  max-width: 30em;
+}
+
+img {
+  width: 100%;
+}
+
+
+// possibly useful debugging stuff
+%debug { outline: 1px solid black; }
+.debug1 { @extend %debug; outline-color: red; }
+.debug2 { @extend %debug; outline-color: blue; }
+.debug3 { @extend %debug; outline-color: green; }
