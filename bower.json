@@ -17,6 +17,7 @@
   "dependencies": {
     "modernizr": "~2.8.3",
     "holderjs": "~2.4.1",
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "svg.js": "~1.0.1"
   }
 }
