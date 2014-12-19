@@ -2,3 +2,59 @@
 @import "config";
 
 // layout stuff
+
+.container {
+  margin-top: 2rem;
+
+  @include container;
+//  @include show-grid(overlay);
+
+}
+
+article {
+  @include span(12);
+
+  @include susy-breakpoint(65rem, 12) {
+    @include span(8);
+  }
+
+  &.primary {
+    @include susy-breakpoint(65rem, 12) {
+      @include span(12);
+    }
+  }
+
+}
+
+.article-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  p {
+    font-family: "brandon-grotesque", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+//    text-transform: uppercase;
+//    letter-spacing: .02em;
+
+    font-style: italic;
+  }
+}
+
+
+aside {
+  font-size: ms(-1);
+
+  @include span(12);
+
+  @include susy-breakpoint(65rem, 12) {
+    @include span(3 last);
+  }
+
+  h3 {
+    font-size: ms(0);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+}
