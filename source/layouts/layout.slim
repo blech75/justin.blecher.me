@@ -1,0 +1,26 @@
+doctype html
+
+html.no-js lang="en"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE-edge"
+
+    title
+
+    meta name="description" content=""
+    meta name="keywords"    content=""
+
+    / no fancy viewport math, please
+    meta name="viewport"    content="width=device-width, initial-scale=1"
+
+    // FIXME: add these details later
+    // link rel="author" href="humans.txt"
+    // link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"
+    // =favicon_tag ''
+
+    =javascript_include_tag 'modernizr/modernizr'
+
+  body class=page_classes
+    .container role="main"
+
+      =yield
