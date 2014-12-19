@@ -9,6 +9,12 @@
 @import "modular-scale";
 
 
+// configure modular scale
+// FIXME: 1em feels a lttle too big
+$ms-base: 1em;
+$ms-ratio: $augmented-fourth;
+
+
 // configure main susy grid
 $susy: (
   flow: ltr,
