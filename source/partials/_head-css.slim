@@ -1,0 +1,7 @@
+=stylesheet_link_tag \
+  'base',
+  'layout'
+
+// page-/section-specific CSS
+- if current_page.data.css
+  =stylesheet_link_tag current_page.data.css

@@ -1,0 +1,8 @@
+// import global config
+@import "config";
+
+// first normalize our CSS
+@import "normalize";
+
+// now we can set up our base styles
+// FIXME: this should be broken up into smaller, more targeted files
