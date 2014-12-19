@@ -1,0 +1,7 @@
+=javascript_include_tag \
+  'jquery/dist/jquery',
+  'holderjs/holder'
+
+// page-/section-specific JS
+- if current_page.data.js
+  =javascript_include_tag current_page.data.js
