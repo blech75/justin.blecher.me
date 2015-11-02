@@ -54,6 +54,42 @@ ul.inline {
 }
 
 
+section#about-me {
+  section {
+    // margin-left: 2em;
+
+    // sections become the P since we're displaying children inline.
+    margin-bottom: 1em;
+
+    h3 {
+      // display: none;
+      margin-top: 0;
+      font-size: 1em;
+      display: inline;
+      font-family: $font-serif;
+
+      &::after {
+        content: ': ';
+      }
+    }
+
+    p:first-of-type {
+      display: inline;
+    }
+
+    > ul {
+      @include collapsed-list();
+      @include left-border();
+
+      // display: inline;
+      margin-top: 1em;
+    }
+
+  }
+
+}
+
+
 span.middot {
   @include separator-padding();
 }
