@@ -166,6 +166,30 @@ section {
   }
 }
 
+section#personal-projects {
+
+  h3 a {
+
+    &::after {
+      content: attr(href);
+      font-size: ms(-1);
+      display: block;
+      // margin-left: 1em;
+      text-transform: none;
+    }
+
+  }
+
+}
+
+section#community-contributions {
+  // not entirely robust
+  ul:first-of-type li a:nth-child(1) {
+    font-weight: bold;
+  }
+}
+
+
 span.middot {
   @include separator-padding();
 }
