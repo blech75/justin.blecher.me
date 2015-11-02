@@ -7,3 +7,11 @@
 article.primary
   div.wrapper
     =partial 'partials/resume.slim'
+
+
+- content_for :footer_js do
+  javascript:
+    jQuery(function($){
+
+
+    }(jQuery));
