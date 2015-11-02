@@ -10,7 +10,7 @@
 
 // define base (body text) fonts on the body
 body {
-  font-family: "ff-more-web-pro", georgia, "times new roman", serif;
+  font-family: $font-serif;
   font-style: normal;
   font-weight: 400;
 
@@ -26,7 +26,7 @@ body {
 
 // set up header typography
 h1, h2, h3, h4, h5, h6 {
-  font-family: "brandon-grotesque", sans-serif;
+  font-family: $font-sans;
   text-transform: capitalize;
   margin-top: 0;
 }
