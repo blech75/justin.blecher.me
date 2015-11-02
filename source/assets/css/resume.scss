@@ -152,6 +152,13 @@ section#about-me {
 }
 
 
+section#values,
+section#personal-interests {
+  ul {
+    @include inline-list();
+  }
+}
+
 section {
   p.chat-bubble {
     margin-top: 1.5rem;
