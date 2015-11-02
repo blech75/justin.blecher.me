@@ -17,6 +17,11 @@ body.resume {
 }
 
 
+// stylize personal descriptions
+h1 + ul > li {
+  font-style: italic;
+}
+
 h2 {
   border-bottom: 1px solid black;
   padding-bottom: 0.5rem;
