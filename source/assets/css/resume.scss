@@ -28,6 +28,10 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+.commentary {
+  font-style: italic;
+}
+
 section#about-me h2 {
   // due to p.chat-bubble preceding this
   margin-top: 0;
@@ -89,6 +93,8 @@ section#about-me h2 {
   padding-left: 1em;
 }
 
+
+
 // hide my notes
 section li ul {
   display: none;
@@ -128,6 +134,9 @@ section li ul {
   }
 }
 
+span.middot {
+  @include separator-padding();
+}
 
 ul.inline {
   @include inline-list;
@@ -185,9 +194,7 @@ section {
 }
 
 section#personal-projects {
-
   h3 a {
-
     &::after {
       content: attr(href);
       font-size: ms(-1);
@@ -195,9 +202,7 @@ section#personal-projects {
       // margin-left: 1em;
       text-transform: none;
     }
-
   }
-
 }
 
 section#community-contributions {
@@ -208,12 +213,10 @@ section#community-contributions {
 }
 
 
-span.middot {
-  @include separator-padding();
-}
-
-.commentary {
-  font-style: italic;
+section#bucket-list {
+  del {
+    color: gray;
+  }
 }
 
 
