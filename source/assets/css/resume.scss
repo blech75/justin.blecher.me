@@ -10,6 +10,11 @@ body.resume {
 }
 
 
+section#about-me h2 {
+  // due to p.chat-bubble preceding this
+  margin-top: 0;
+}
+
 .chat-bubble {
   border: 0.15rem solid gray;
   border-radius: 1rem;
@@ -138,6 +143,13 @@ section#about-me {
 
 }
 
+
+section {
+  p.chat-bubble {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
 
 span.middot {
   @include separator-padding();
