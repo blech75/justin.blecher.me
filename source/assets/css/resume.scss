@@ -1,4 +1,7 @@
-@import "config";
+// import global config
+@import 'config';
+
+// ----
 
 body.resume {
   @include breakpoint(40rem) {
