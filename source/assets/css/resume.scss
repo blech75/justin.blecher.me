@@ -1,7 +1,14 @@
 // import global config
 @import 'config';
 
+// FIXME
+$resume-link-color: #3256c3;
+
 // ----
+
+a {
+  color: $resume-link-color;
+}
 
 body.resume {
   @include breakpoint(40rem) {
