@@ -14,32 +14,43 @@ section li ul {
   display: none;
 }
 
-@mixin separator-padding() {
-  padding-left: .25em;
-  padding-right: .25em;
+@mixin separator-padding($padding: 0.25em) {
+  padding-left: $padding;
+  padding-right: $padding;
 }
 
-@mixin inline-list( $separator : " · " ) {
-  li {
-    display: inline;
+@mixin list-dots($separator: ' · ') {
+  &:after {
+    @include separator-padding();
+    content: ' · ';
+  }
 
-    &:after {
-      content: $separator;
-      @include separator-padding();
-    }
-
-    &:last-child:after {
-      content: none;
-    }
+  &:last-child:after {
+    content: none;
   }
 }
 
-section#values ul,
-section#personal-interests ul,
-section#dont-get-me-started ul {
+@mixin inline-list($separator: ' · ') {
   padding-left: 0;
 
-  @include inline-list();
+  li {
+    @include list-dots();
+
+    display: inline;
+  }
+}
+
+@mixin collapsed-list() {
+  padding-left: 0;
+
+  li {
+    display: inline;
+  }
+}
+
+
+ul.inline {
+  @include inline-list;
 }
 
 
