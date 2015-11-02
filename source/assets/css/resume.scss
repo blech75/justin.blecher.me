@@ -54,27 +54,4 @@ span.middot {
 
 div.tabs {
   @include container();
-
-  section#highlights {
-    @include span(45% no-gutter);
-  }
-
-  section#technical-specialites {
-    @include span(45% no-gutter last);
-  }
-
-}
-
-
-section#experience {
-  @include container();
-
-  div.present {
-    @include span(45% no-gutter);
-  }
-
-  div.past {
-    @include span(45% no-gutter last);
-  }
-
 }
