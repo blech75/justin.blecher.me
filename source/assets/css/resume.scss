@@ -63,6 +63,14 @@ section#about-me h2 {
   }
 }
 
+
+
+@mixin left-border() {
+  margin-left: 2em;
+  border-left: 4px solid #ddd;
+  padding-left: 1em;
+}
+
 // hide my notes
 section li ul {
   display: none;
