@@ -22,6 +22,7 @@ body.resume {
 // stylize personal descriptions
 h1 + ul > li {
   font-style: italic;
+  white-space: nowrap;
 }
 
 h2 {
