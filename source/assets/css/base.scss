@@ -10,7 +10,7 @@
 
 // define base (body text) fonts on the body
 body {
-  font-family: $font-serif;
+  font-family: $font-body;
   font-style: normal;
   font-weight: 400;
 
@@ -26,7 +26,7 @@ body {
 
 // set up header typography
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-sans;
+  font-family: $font-headings;
   // text-transform: capitalize;
   margin-top: 0;
 }
