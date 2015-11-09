@@ -11,7 +11,9 @@ a {
 }
 
 body.resume {
-  @include breakpoint(40rem) {
+  font-size: 0.75em;
+
+  @include breakpoint(35rem) {
     font-size: 1em;
   };
 }
