@@ -64,7 +64,9 @@ h2 {
   border-bottom: 1px solid $color-heading;
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
-  padding-right: 1.25em;
+
+  // accommodates avatar
+  padding-right: 1.5em;
 }
 
 .commentary {
