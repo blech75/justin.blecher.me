@@ -1,16 +1,36 @@
 // import global config
 @import 'config';
 
-// FIXME
-$resume-link-color: #3256c3;
+// import our lib
+@import "mixins";
+
+
+// named colors
+$pcolor-beige: #F5EEE6;
+$pcolor-orange: #f59e17;
+$pcolor-blue: #1791F5;
+$pcolor-dark-brown: #2E1E0D;
+$pcolor-faded: #FFDAA1;
+
+// color instances
+$color-resume-link: $pcolor-blue;
+$color-heading: $pcolor-dark-brown;
+$color-left-border: $pcolor-dark-brown;
+$color-chat-bubble: $pcolor-orange;
+$color-chat-bubble-border: $pcolor-orange;
+$color-del: $pcolor-faded;
 
 // ----
 
-a {
-  color: $resume-link-color;
+// FIXME: hide my notes
+section li ul {
+  display: none;
 }
 
-body.resume {
+// ----
+
+html {
+  color: $pcolor-dark-brown;
   font-size: 0.75em;
 
   @include breakpoint(35rem) {
@@ -18,138 +38,184 @@ body.resume {
   };
 }
 
+body {
+  background: $pcolor-beige;
+}
 
-// stylize personal descriptions
-h1 + ul > li {
-  font-style: italic;
-  white-space: nowrap;
+a {
+  color: $color-resume-link;
+}
+
+del {
+  color: $color-del;
+}
+
+article {
+  // give the bottom of the page some breathing room
+  margin-bottom: 5rem;
+}
+
+h1 {
+  text-indent: -1.25em;
+  padding-left: 1.25em;
 }
 
 h2 {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $color-heading;
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
+  padding-right: 1.25em;
 }
 
 .commentary {
   font-style: italic;
 }
 
-section#about-me h2 {
-  // due to p.chat-bubble preceding this
-  margin-top: 0;
-}
-
-.chat-bubble {
-  border: 0.15rem solid gray;
-  border-radius: 1rem;
-  padding: 0.75rem 1rem;
-  position: relative;
-  display: inline-block;
-  margin-bottom: 6rem;
-
-  &:before {
-    content: '';
-    position: absolute;
-    display: block;
-    bottom: -2rem;
-    left: 4rem;
-    width: 0;
-    height: 0;
-    border: 1rem solid;
-    border-color: gray transparent transparent gray;
+.primary-tech {
+  em {
+    font-style: normal;
+    font-weight: 500;
   }
-
-  &:after {
-    content: '';
-    position: absolute;
-    display: block;
-    bottom: -1.66rem;
-    left: 4.15rem;
-    width: 0;
-    height: 0;
-    border: .9rem solid;
-    border-color: white transparent transparent white;
-  }
-
-  a {
-    white-space: nowrap;
-  }
-
-  i.avatar {
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    bottom: -4rem;
-    left: 0;
-    background-image: url('//en.gravatar.com/userimage/22662030/7824231835a7dd02086e4d72750dbe59.png?size=200');
-    background-size: cover;
-    border-radius: 0.5rem;
-  }
-}
-
-
-
-@mixin left-border() {
-  margin-left: 2em;
-  border-left: 4px solid #ddd;
-  padding-left: 1em;
-}
-
-
-
-// hide my notes
-section li ul {
-  display: none;
-}
-
-@mixin separator-padding($padding: 0.25em) {
-  padding-left: $padding;
-  padding-right: $padding;
-}
-
-@mixin list-dots($separator: ' · ') {
-  &:after {
-    @include separator-padding();
-    content: ' · ';
-  }
-
-  &:last-child:after {
-    content: none;
-  }
-}
-
-@mixin inline-list($separator: ' · ') {
-  padding-left: 0;
-
-  li {
-    @include list-dots();
-
-    display: inline;
-  }
-}
-
-@mixin collapsed-list() {
-  padding-left: 0;
-
-  li {
-    display: inline;
-  }
-}
-
-span.middot {
-  @include separator-padding();
 }
 
 ul.inline {
   @include inline-list;
 }
 
+// ----
 
-section#about-me {
+i.avatar {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.25em;
+  background-image: url('//en.gravatar.com/userimage/22662030/7824231835a7dd02086e4d72750dbe59.png?size=200');
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+
+.chat-bubble-wrapper {
+  margin-top: -2.5rem;
+  margin-bottom: 1.25rem;
+  // needed for short text, to keep bubble aligned right. overridden by
+  // .chat-bubble text-align
+  text-align: right;
+
+  .chat-bubble {
+    display: none;
+    position: relative;
+    font-size: ms(-1);
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0.5rem 0.75rem;
+    background-color: $color-chat-bubble;
+    border: 1.5px solid $color-chat-bubble-border;
+    border-radius: 0.75rem;
+    color: tint($color-chat-bubble, 90);
+    font-weight: 500;
+    text-align: left;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: -1.41rem;
+      right: 2rem;
+      width: 0;
+      height: 0;
+      border: 0.72rem solid;
+      border-color: transparent $color-chat-bubble-border $color-chat-bubble-border transparent;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: -1.23rem;
+      right: 2.06rem;
+      width: 0;
+      height: 0;
+      border: 0.70rem solid;
+      border-color: transparent $color-chat-bubble $color-chat-bubble transparent;
+    }
+
+    a {
+      white-space: nowrap;
+    }
+
+  }
+
+  &.active {
+    .chat-bubble {
+      display: inline-block;
+    }
+  }
+
+  i.avatar {
+    // same as header; allows matching to header size due to sizing of avatar in ems
+    font-size: ms(1);
+    display: block;
+    margin-left: auto;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
   }
 }
 
+h2 + .chat-bubble-wrapper {
+  margin-bottom: 0;
+}
+
+h3 + .chat-bubble-wrapper {
+  // no border on h3s
+  margin-top: -1.875rem;
+  margin-bottom: 0.5rem;
+
+  .chat-bubble {
+    margin-top: 0.5rem;
+  }
+}
+
+.chat-bubble-wrapper.active + h3,
+.chat-bubble-wrapper.active ~ #jobs > .job > h3 {
+  margin-top: .5em;
+}
+
+.chat-bubble-wrapper + ul {
+  margin-top: 1.5em;
+}
+
+.chat-bubble-wrapper.active + ul {
+  margin-top: 0.5em;
+}
+
+// ----
+
+section#intro {
+  // stylize personal descriptions
+  h1 + ul > li {
+    font-style: italic;
+  }
+
+  ul {
+    // make line height match paragraph
+    margin-bottom: 0;
+    line-height: 1.75em;
+
+    li {
+      white-space: nowrap;
+    }
+  }
+}
+
+section#about-me {
+  ul {
+    @include collapsed-list();
+    @include left-border();
+  }
+}
 
 section#personal-interests {
   ul {
@@ -157,35 +223,99 @@ section#personal-interests {
   }
 }
 
-section {
-  p.chat-bubble {
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-  }
-}
-
-section#personal-projects {
-  h3 a {
-    &::after {
-      content: attr(href);
-      font-size: ms(-1);
-      display: block;
-      // margin-left: 1em;
-      text-transform: none;
-    }
-  }
-}
+section#experience { }
 
 section#community-contributions {
   // not entirely robust
   ul:first-of-type li a:nth-child(1) {
-    font-weight: bold;
+    // font-family: $font-body;
+    font-weight: 500;
   }
 }
 
+section#personal-projects { }
 
-section#bucket-list {
-  del {
-    color: gray;
+section#bucket-list { }
+
+
+#jobs-nav {
+  width: auto;
+  height: 1rem;
+  display: none;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    min-height: 1rem;
+
+    li {
+      // FIXME: use for all elements?
+      box-sizing: border-box;
+
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0;
+      height: 1rem;
+      line-height: 1;
+      cursor: pointer;
+
+      &:nth-child(odd) {
+        background: #999;
+      }
+
+      &:nth-child(even) {
+        background: #666;
+      }
+
+      &.active {
+        background: red;
+      }
+
+      &.inactive {
+        //
+      }
+
+      &:hover {
+        border: 1px solid red;
+      }
+    }
+
+  }
+
+}
+
+#jobs {
+  transition: height 0.5s;
+
+  &.active {
+    overflow: hidden;
+  }
+
+  .job {
+    transition: margin-top 0.5s;
+
+    // workaround for margin collapse
+    &::before,
+    &::after {
+      content: ' ';
+      display: table;
+    }
+
+    &.inactive {
+      opacity: 0;
+      // transition: opacity 0.5s;
+    }
+
+    &.active {
+      opacity: 1;
+      transition: opacity 1s;
+    }
   }
 }

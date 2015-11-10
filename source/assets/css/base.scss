@@ -1,6 +1,9 @@
 // import global config
 @import "config";
 
+// import our lib
+@import "mixins";
+
 // first normalize our CSS
 @import "normalize";
 
@@ -14,10 +17,7 @@ body {
   font-style: normal;
   font-weight: 400;
 
-  font-size: 1em;
-  @include breakpoint(40rem) {
-    font-size: 1.4em;
-  };
+  font-size: 1rem;
   line-height: 1.75;
 
   // our layout will likely always needs some left-right padding
@@ -27,36 +27,35 @@ body {
 // set up header typography
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-headings;
-  // text-transform: capitalize;
   margin-top: 0;
 }
 
 h1 {
   font-size: ms(3);
   font-style: normal;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 800;
   line-height: 1.1;
   margin-bottom: 0.25em;
 }
 
 h2 {
-  font-size: ms(2);
+  font-size: ms(1);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
   line-height: 1;
   margin-top: 2em;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.1875em;
 }
 
 h3 {
   font-size: ms(1);
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.2;
-  margin-top: 2em;
-  margin-bottom: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 0.25em;
 }
 
 h4 {
@@ -64,7 +63,7 @@ h4 {
   font-style: normal;
   font-weight: 800;
   line-height: 1.2;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   margin-top: 2em;
   margin-bottom: 1em;
 }

@@ -1,0 +1,39 @@
+@mixin left-border() {
+  margin-left: 2em;
+  border-left: 4px solid $color-left-border;
+  padding-left: 1em;
+}
+
+@mixin separator-padding($padding: 0.25em) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin list-dots($separator: ' · ') {
+  &:after {
+    @include separator-padding();
+    content: ' · ';
+  }
+
+  &:last-child:after {
+    content: none;
+  }
+}
+
+@mixin inline-list($separator: ' · ') {
+  padding-left: 0;
+
+  li {
+    @include list-dots();
+
+    display: inline;
+  }
+}
+
+@mixin collapsed-list() {
+  padding-left: 0;
+
+  li {
+    display: inline;
+  }
+}
