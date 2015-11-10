@@ -221,6 +221,10 @@ section#about-me {
 section#personal-interests {
   ul {
     @include inline-list();
+
+    li {
+      white-space: nowrap;
+    }
   }
 }
 
