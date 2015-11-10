@@ -13,5 +13,9 @@ article.primary
   javascript:
     jQuery(function($){
 
+      // simple little chat bubble hide/show
+      $('.chat-bubble-wrapper .avatar').on('click', function(){
+        $(this).parent().toggleClass('active');
+      });
 
     }(jQuery));
