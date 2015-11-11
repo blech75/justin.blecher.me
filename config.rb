@@ -2,7 +2,7 @@
 # FIXME: i'm sure this could be done better/smarter than a class var. i'm feeling an external yaml/json file?
 @SITE_TITLE = "worksperfectly"
 @SITE_DESCRIPTION = ""
-@SITE_KEYWORDS = %w(justin blecher works perfectly web development)
+@SITE_KEYWORDS = %w(justin blecher worksperfectly works perfectly web development)
 
 # allow a custom build dir to be passed in via env var
 build_dir = ENV['MIDDLEMAN_BUILD_DIR'] || "build"
