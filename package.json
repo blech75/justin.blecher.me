@@ -1,0 +1,15 @@
+{
+  "name": "worksperfectly.net",
+  "version": "0.0.1",
+  "description": "",
+  "dependencies": {
+    "bower": "^1.6.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "postinstall": "bower install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "justin@worksperfectly.net",
+  "private": true
+}
