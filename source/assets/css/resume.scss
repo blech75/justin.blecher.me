@@ -29,6 +29,10 @@ section li ul {
 
 // ----
 
+.print-only {
+  display: none;
+}
+
 html {
   color: $pcolor-dark-brown;
   font-size: 0.75em;
@@ -359,4 +363,28 @@ section#conversation-starters {
       transition: opacity 1s;
     }
   }
+}
+
+
+@media print {
+
+  body.resume {
+    padding: 0;
+    background: white;
+    color: black;
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .print-only {
+    display: inherit;
+  }
+
+  section {
+    // page-break-inside: avoid;
+  }
+
+
 }

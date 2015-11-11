@@ -62,3 +62,12 @@ aside {
   }
 
 }
+
+
+@media print {
+
+  .container {
+    max-width: none;
+  }
+
+}
