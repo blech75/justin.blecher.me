@@ -1,6 +1,6 @@
 # this config is used by helpers in meta_helpers.rb
 # FIXME: i'm sure this could be done better/smarter than a class var. i'm feeling an external yaml/json file?
-@SITE_TITLE = "worksperfectly"
+@SITE_TITLE = "Justin Blecher"
 @SITE_DESCRIPTION = ""
 @SITE_KEYWORDS = %w(justin blecher worksperfectly works perfectly web development)
 
