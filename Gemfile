@@ -13,7 +13,7 @@ gem "pre-commit"
 
 # middleman, our friendly neighborhood static site generator
 # http://middlemanapp.com
-gem "middleman", "~> 3.3"
+gem "middleman", "~> 3.4"
 
 # helpful for debugging middleman
 # https://github.com/AndrewKvalheim/middleman-pry
