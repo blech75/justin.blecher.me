@@ -47,8 +47,7 @@ end
 [
   'jquery/dist/jquery',
   'modernizr/modernizr',
-  'holderjs/holder',
-  'svg.js/dist/svg'
+  'holderjs/holder'
 ].each do |path|
   sprockets.import_asset(path)
 end
