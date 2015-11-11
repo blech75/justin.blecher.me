@@ -9,10 +9,16 @@
   padding-right: $padding;
 }
 
-@mixin list-dots($separator: ' · ') {
+@mixin list-dots($separator: $char-bullet) {
   &:after {
     @include separator-padding();
-    content: ' · ';
+    content: (' ' + $separator + ' ');
+
+    @if ($separator == $char-bullet) {
+      font-size: 0.75em;
+      font-style: normal;
+      vertical-align: middle;
+    }
   }
 
   &:last-child:after {
@@ -20,17 +26,32 @@
   }
 }
 
-@mixin inline-list($separator: ' · ') {
+@mixin reset-list-items() {
+  li::before {
+    content: none;
+    margin-right: 0;
+  }
+
+  li {
+    list-style-type: inherit;
+    text-indent: 0;
+    padding-left: 0;
+  }
+}
+
+@mixin inline-list($separator: $char-bullet) {
+  @include reset-list-items();
   padding-left: 0;
 
   li {
-    @include list-dots();
+    @include list-dots($separator);
 
     display: inline;
   }
 }
 
 @mixin collapsed-list() {
+  @include reset-list-items();
   padding-left: 0;
 
   li {

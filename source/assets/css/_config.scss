@@ -16,6 +16,9 @@ $fontstack-ffmore: 'ff-more-web-pro', georgia, 'times new roman', serif;
 $font-body: $fontstack-ffmore;
 $font-headings: $fontstack-clarendon;
 
+$char-bullet: '•';
+$char-middot: '·';
+
 
 // configure modular scale
 // FIXME: 1em feels a lttle too big

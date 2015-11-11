@@ -80,8 +80,24 @@ h2 {
   }
 }
 
+ul {
+  li::before {
+    content: $char-bullet;
+    font-size: 0.75em;
+    font-style: normal;
+    vertical-align: middle;
+    margin-right: 0.75em;
+  }
+
+  li {
+    list-style-type: none;
+    text-indent: -1em;
+    padding-left: 1em;
+  }
+}
+
 ul.inline {
-  @include inline-list;
+  @include inline-list($char-middot);
 }
 
 // ----
