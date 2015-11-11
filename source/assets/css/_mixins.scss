@@ -41,6 +41,7 @@
 
 @mixin inline-list($separator: $char-bullet) {
   @include reset-list-items();
+
   padding-left: 0;
 
   li {

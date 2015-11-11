@@ -234,6 +234,14 @@ section#about-me {
     @include collapsed-list();
     @include left-border();
   }
+
+  ul:nth-of-type(2) {
+    @include inline-list();
+
+    // need to set this again due to too much list styling action going on
+    padding-left: 1em;
+  }
+
 }
 
 section#personal-interests {
