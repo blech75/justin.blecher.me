@@ -246,7 +246,11 @@ section#personal-interests {
   }
 }
 
-section#experience { }
+section#experience {
+  span.period {
+    white-space: nowrap;
+  }
+}
 
 section#community-contributions {
   // not entirely robust
