@@ -5,7 +5,7 @@ source "https://rubygems.org"
 
 # heroku wants the ruby version set here in the Gemfile, too.
 # ensure this remains in sync with .ruby-version
-ruby '2.1.0'
+ruby '2.1.7'
 
 # nice ruby gem for pre-commit hooks
 # http://jish.github.io/pre-commit/
