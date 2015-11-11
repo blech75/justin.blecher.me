@@ -46,8 +46,10 @@ end
 use Rack::Deflater
 
 ## add HTTP auth for heroku apps. config'd via heroku environment variables
-use Rack::Auth::Basic, HTTP_AUTH_AREA_NAME do |username, password|
-  [username, password] == [ENV['HTTP_USER'], ENV['HTTP_PASSWORD']]
+if !ENV['HTTP_USER'].nil? && !ENV['HTTP_PASSWORD'].nil?
+  use Rack::Auth::Basic, HTTP_AUTH_AREA_NAME do |username, password|
+    [username, password] == [ENV['HTTP_USER'], ENV['HTTP_PASSWORD']]
+  end
 end
 
 use Rack::TryStatic,
