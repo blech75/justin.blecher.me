@@ -21,16 +21,16 @@ html.no-js lang="en"
     =javascript_include_tag 'modernizr/modernizr'
 
     // typekit JS
-    =partial "partials/head-fonts"
+    =partial "head-fonts"
 
     // site CSS
-    =partial "partials/head-css"
+    =partial "head-css"
 
   body class=page_classes
     .container role="main"
 
       =yield
 
-    =partial "partials/footer-js"
+    =partial "footer-js"
 
     =yield_content :footer_js

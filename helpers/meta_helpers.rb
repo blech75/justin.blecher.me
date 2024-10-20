@@ -5,10 +5,10 @@
 module MetaHelpers
 
   def page_title
-    title = @SITE_TITLE || ""
+    title = "Justin Blecher"
 
-    if data.page.title
-      title = title + " | " + data.page.title
+    if current_resource.data.title
+      title = title + " | " + current_resource.data.title
     end
 
     title
@@ -16,10 +16,10 @@ module MetaHelpers
 
 
   def page_description
-    description = @SITE_DESCRIPTION || ""
+    description = ""
 
-    if data.page.description
-      description = data.page.description
+    if current_resource.data.description
+      description = current_resource.data.description
     end
 
     description
@@ -27,14 +27,10 @@ module MetaHelpers
 
 
   def page_keywords
-    keywords = if @SITE_KEYWORDS
-      @SITE_KEYWORDS
-    else
-      []
-    end
+    keywords = %w(justin blecher worksperfectly works perfectly web development)
 
-    if data.page.keywords
-      keywords.concat(data.page.keywords)
+    if current_resource.data.keywords
+      keywords.concat(current_resource.data.keywords)
     end
 
     keywords.uniq.join(", ")

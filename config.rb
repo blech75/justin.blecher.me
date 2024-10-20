@@ -1,15 +1,7 @@
-# this config is used by helpers in meta_helpers.rb
-# FIXME: i'm sure this could be done better/smarter than a class var. i'm feeling an external yaml/json file?
-@SITE_TITLE = "Justin Blecher"
-@SITE_DESCRIPTION = ""
-@SITE_KEYWORDS = %w(justin blecher worksperfectly works perfectly web development)
-
 # allow a custom build dir to be passed in via env var
 build_dir = ENV['MIDDLEMAN_BUILD_DIR'] || "build"
 set :build_dir, build_dir
 
-# build target configuration
-activate :target
 
 # Indent html for pretty debugging and do not sort attributes
 set :slim, pretty: true
@@ -25,8 +17,8 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true
 # group all assets under single dir and allow that to be passed in via env var.
 # (not sure of use case for env var yet, but it seems interesting.)
 assets_dir = ENV['MIDDLEMAN_ASSETS_DIR'] || "assets"
-set :css_dir,    "#{assets_dir}/css"
-set :js_dir,     "#{assets_dir}/js"
+set :css_dir,    "#{assets_dir}"
+set :js_dir,     "#{assets_dir}"
 set :images_dir, "#{assets_dir}/img"
 set :fonts_dir,  "#{assets_dir}/fonts"
 
@@ -42,15 +34,17 @@ after_configuration do
 end
 
 
-# explcitly import assets here that are to be directly referenced from the HTML
-# FIXME: i'd love for these to be under a 'vendor' folder
-[
-  'jquery/dist/jquery',
-  'modernizr/modernizr',
-  'holderjs/holder'
-].each do |path|
-  sprockets.import_asset(path)
-end
+
+# sass in sprockets 4 needs to know explicit paths
+SassC.load_paths << File.join(root, 'bower_components/compass-mixins/lib')
+SassC.load_paths << File.join(root, 'bower_components/breakpoint-sass/stylesheets')
+SassC.load_paths << File.join(root, 'bower_components/susy/sass')
+SassC.load_paths << File.join(root, 'bower_components/modular-scale/stylesheets')
+SassC.load_paths << File.join(root, 'bower_components/normalize.css')
+
+activate :sprockets
+sprockets.append_path File.join(root, 'source', 'assets', 'css')
+
 
 
 # from default middleman config (minus the asset dir stuff, already set above)
@@ -107,7 +101,14 @@ end
 # end
 
 
-# Build-specific configuration
+configure :development do
+  set :debug_assets, true
+end
+
+configure :server do
+  #enable sprockets debugging
+end
+
 configure :build do
   # For example, change the Compass output style for deployment
   activate :minify_css
@@ -125,6 +126,6 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-configure :development do
-  # set :debug_assets, true
+configure :production do
+  activate :minify_html
 end
