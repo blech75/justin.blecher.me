@@ -131,5 +131,5 @@ configure :build do
 end
 
 configure :production do
-  activate :minify_html
+  # activate :minify_html
 end
