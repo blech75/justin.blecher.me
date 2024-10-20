@@ -5,7 +5,7 @@ source "https://rubygems.org"
 
 # heroku wants the ruby version set here in the Gemfile, too.
 # ensure this remains in sync with .ruby-version
-ruby '2.1.7'
+ruby '3.2.5'
 
 # nice ruby gem for pre-commit hooks
 # http://jish.github.io/pre-commit/
@@ -13,15 +13,15 @@ gem "pre-commit"
 
 # middleman, our friendly neighborhood static site generator
 # http://middlemanapp.com
-gem "middleman", "~> 3.4"
+gem "middleman", "~> 4.2"
+
+# sprockets is no longer inclded in core
+gem "middleman-sprockets"
 
 # helpful for debugging middleman
 # https://github.com/AndrewKvalheim/middleman-pry
 gem "middleman-pry", group: :development
 
-# provide build targets for different environments
-# https://github.com/xunker/middleman-target
-gem "middleman-target"
 
 # redcarpet is nicer than kramdown
 # https://github.com/vmg/redcarpet
@@ -29,23 +29,8 @@ gem "redcarpet"
 
 # better than HAML
 # http://slim-lang.com
-gem 'slim'
+gem 'slim', '4.1' # s v5 doesn't work w/ middleman
 
-# Breakpoint css for simplified media queries
-# http://breakpoint-sass.com
-gem "breakpoint"
-
-# Susy Sass
-# http://susy.oddbird.net
-gem "susy"
-
-# normalize SASS port
-# https://github.com/JohnAlbin/normalize-scss
-gem "normalize-scss"
-
-# for providing nice type sizes
-# https://github.com/at-import/modular-scale
-gem "modular-scale"
 
 
 ### DEPLOYMENT

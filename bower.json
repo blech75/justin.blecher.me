@@ -18,5 +18,12 @@
     "modernizr": "~2.8.3",
     "holderjs": "~2.4.1",
     "jquery": "~2.1.1"
+  },
+  "devDependencies": {
+    "modular-scale": "^3.0.10",
+    "breakpoint-sass": "^2.7.1",
+    "susy": "^2.2.5",
+    "compass-mixins": "Igosuki/compass-mixins#^1.0.2",
+    "normalize.css": "adamjgrant/normalize.css"
   }
 }
