@@ -114,7 +114,11 @@ configure :build do
   activate :minify_css
 
   # Minify Javascript on build
-  activate :minify_javascript
+  #
+  # FIXME: disabling for now becaue it hangs the build. possibly related to
+  # https://github.com/middleman/middleman/issues/2254 ?
+  #
+  # activate :minify_javascript
 
   # Enable cache buster
   activate :asset_hash
